@@ -1,0 +1,63 @@
+@import "utils/_helpers.scss";
+
+//global css
+
+body {
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: "calibri", "roboto";
+  @include dark-text;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.page-container {
+  @include flexContainer(center, start, 100%, column);
+  padding: 20px 40px;
+  max-width: 1400px;
+}
+
+.centered {
+  @include flexContainer(center, center);
+}
+
+h1 {
+  margin-block-end: 5px;
+  font-size: 24px;
+}
+
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+hr {
+  border-left: unset;
+  border-bottom: unset;
+  border-right: unset;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-block-end: 20px;
+  height: 1px;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  min-width: calc(100vw - 17px);
+  overflow: hidden;
+}
+
+.loader {
+  width: 100px;
+}

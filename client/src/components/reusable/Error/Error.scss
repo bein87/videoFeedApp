@@ -1,0 +1,13 @@
+@import "utils/_helpers";
+
+.error-container {
+  @include slow-transition;
+  @include flexContainer(center, center, 100);
+  .error-message {
+    padding: 10px;
+    @include small-radius;
+    background: rgb(238, 137, 137);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

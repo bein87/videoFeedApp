@@ -1,0 +1,166 @@
+//display flex builder mixin:
+
+@mixin flexContainer(
+  $justifyPosition,
+  $alignPosition,
+  $width: null,
+  $direction: null
+) {
+  display: flex;
+
+  //align-items
+  @if ($alignPosition == "start") {
+    align-items: flex-start;
+  }
+  @if ($alignPosition == "end") {
+    align-items: flex-end;
+  }
+  @if ($alignPosition != "end" and $alignPosition != "start") {
+    align-items: $alignPosition;
+  }
+
+  //justify-content
+  @if ($justifyPosition == "start") {
+    justify-content: flex-start;
+  }
+  @if ($justifyPosition == "end") {
+    justify-content: flex-end;
+  }
+  @if ($justifyPosition == "between") {
+    justify-content: space-between;
+  }
+  @if ($justifyPosition == "around") {
+    justify-content: space-between;
+  }
+  @if ($justifyPosition == "evenly") {
+    justify-content: space-evenly;
+  }
+  @if (
+    $justifyPosition !=
+      "between" and
+      $justifyPosition !=
+      "around" and
+      $justifyPosition !=
+      "evenly" and
+      $justifyPosition !=
+      "around" and
+      $justifyPosition !=
+      "end" and
+      $justifyPosition !=
+      "start"
+  ) {
+    justify-content: $justifyPosition;
+  }
+
+  //width
+  @if ($width) {
+    @if ($width==100) {
+      width: 100%;
+    } @else {
+      width: $width;
+    }
+  }
+
+  //direction
+
+  @if ($direction) {
+    flex-direction: $direction;
+  }
+}
+
+//transition related mixins:
+@mixin fast-transition {
+  transition: all 0.2s;
+}
+
+@mixin slow-transition {
+  transition: all 0.5s;
+}
+
+//elements related mixins:
+@mixin white-svg {
+  filter: invert(100%);
+}
+
+@mixin gray-svg {
+  filter: invert(32%) sepia(0%) saturate(0%) hue-rotate(151deg) brightness(92%)
+    contrast(86%);
+}
+
+@mixin red-svg {
+  filter: invert(38%) sepia(71%) saturate(3457%) hue-rotate(338deg)
+    brightness(98%) contrast(74%);
+}
+
+@mixin dark-text {
+  color: #555555;
+}
+@mixin light-text {
+  color: #979797;
+}
+
+@mixin small-radius {
+  border-radius: 7px;
+}
+
+//media queries
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin non-desktop {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin non-mobile {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 769px) {
+    @content;
+  }
+}
+
+//scrollbar
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+    width: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $foreground-color;
+    height: 6px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+    margin: 10px !important;
+    border-radius: 20px;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

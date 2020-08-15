@@ -1,0 +1,36 @@
+@import "utils/_helpers.scss";
+
+.gallery {
+  line-height: 1.7;
+  @include flexContainer(center, center);
+  width: calc(100% + 56px);
+  flex-wrap: wrap;
+  margin-inline-start: -28px;
+
+  .load-more-placeholder {
+    width: 2px;
+    height: 2px;
+    margin: -1px;
+    width: 100%;
+  }
+  .loader-container {
+    height: 80px;
+    margin-block-start: 50px;
+    @include flexContainer(center, center, 100);
+  }
+}
+
+.message-container {
+  @include flexContainer(center, center, 100);
+
+  .message {
+    height: 30px;
+    font-weight: 600;
+  }
+  .line {
+    flex: 1;
+    height: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 30px;
+  }
+}

@@ -1,0 +1,5 @@
+@import "utils/_helpers.scss";
+
+.layout {
+  @include flexContainer(center, center);
+}

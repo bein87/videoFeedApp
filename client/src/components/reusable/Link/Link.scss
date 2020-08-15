@@ -1,0 +1,10 @@
+@import "utils/_helpers.scss";
+
+.link {
+  text-decoration: none;
+  @include dark-text;
+  @include fast-transition;
+  &.active {
+    font-weight: 600 !important;
+  }
+}

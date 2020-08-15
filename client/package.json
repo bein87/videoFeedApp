@@ -1,0 +1,59 @@
+{
+  "name": "video-app-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@naisutech/react-tree": "^0.2.1",
+    "classnames": "^2.2.6",
+    "immer": "^3.2.0",
+    "jest-enzyme": "^7.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^8.26.2",
+    "react-player": "^2.6.0",
+    "react-responsive": "^8.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-transition-group": "^4.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --verbose",
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "eject": "react-scripts eject",
+    "new:component": "hygen react component",
+    "new:context": "hygen react context"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "hygen": "^4.0.9",
+    "react-test-renderer": "^16.9.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx,ts,tsx}",
+      "src/utils/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  }
+}

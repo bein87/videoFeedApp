@@ -1,0 +1,22 @@
+@import "utils/_helpers.scss";
+
+.about-title {
+  h1,
+  h2,
+  h3 {
+    margin-block-start: 3px;
+    margin-block-end: 3px;
+  }
+
+  h2,
+  h3 {
+    font-weight: 300;
+  }
+}
+
+.profile-image {
+  margin-block-start: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}

@@ -1,0 +1,47 @@
+@import "utils/_helpers.scss";
+nav {
+  width: 100%;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  @include flexContainer(center, center);
+
+  .header-container {
+    @include flexContainer(between, center);
+    height: 50px;
+    padding: 0 40px;
+
+    width: 100%;
+    max-width: 1400px;
+
+    .app-logo {
+      width: 100px;
+      @include gray-svg;
+      &:hover {
+        @include red-svg;
+      }
+    }
+    .header-links {
+      @include flexContainer(center, center);
+      .link {
+        &:not(:last-child) {
+          margin-inline-end: 40px;
+        }
+      }
+    }
+    .hamburger-button {
+      width: 27px;
+      height: 27px;
+      cursor: pointer;
+    }
+    .header-drawer {
+      position: absolute;
+      right: -200px;
+      @include flexContainer(center, center, 200px, column);
+    }
+  }
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 100px;
+  }
+}

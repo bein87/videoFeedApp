@@ -1,0 +1,102 @@
+@import "utils/_helpers";
+
+.dropdown {
+  @include small-radius;
+  @include scrollbars(10px, rgba(0, 0, 0, 0.2), white);
+  height: 40px;
+  .dropdown-content-arrow {
+    height: 10px;
+    position: absolute;
+    top: 1px;
+    right: 26px;
+    width: 10px;
+    border: 1px solid #bfbfbf;
+    transform: rotate(45deg);
+    margin-inline-start: 14px;
+    border-bottom: unset;
+    background: white;
+    border-right: unset;
+    @include fast-transition;
+
+    opacity: 0;
+    top: -5px;
+  }
+  .dropdown-content {
+    right: -12px;
+    padding: 0;
+    margin: 0;
+    margin-block-start: 15px;
+    min-width: 115px;
+    position: absolute;
+    overflow: hidden;
+    @include small-radius;
+    line-height: 20px;
+    @include flexContainer(start, start);
+    flex-direction: column;
+    color: white;
+    @include slow-transition;
+    max-height: 0;
+    opacity: 0;
+    z-index: -1;
+
+    span {
+      @include slow-transition;
+      padding: 5px 17px;
+      width: 100%;
+      text-align: start;
+      font-size: 14px;
+      &:hover {
+        a,
+        div {
+          color: red !important;
+        }
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  //animations
+  &.dropdown-enter-active {
+    .dropdown-content {
+      transition: none;
+      max-height: 218px;
+    }
+  }
+  &.dropdown-exit-done {
+    .dropdown-content {
+      transition: none;
+      max-height: 0;
+    }
+  }
+  &.dropdown-exit-active {
+    .dropdown-content {
+      transition: none;
+      max-height: 218px;
+      margin-block-start: 10px;
+    }
+  }
+  &.dropdown-enter-done,
+  &.dropdown-enter-active {
+    .dropdown-content {
+      transition: opacity 0.5s, margin 0.5s;
+      position: absolute;
+      background: white;
+      border: 1px solid #bfbfbf;
+      width: 100px;
+      max-height: 218px;
+      z-index: 6;
+      opacity: 1;
+      padding-block-end: 5px;
+      padding-block-start: 5px;
+    }
+    .dropdown-content {
+      overflow: visible;
+      .dropdown-content-arrow {
+        opacity: 1;
+      }
+    }
+  }
+}

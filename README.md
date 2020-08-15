@@ -17,6 +17,7 @@ A simple app with main page as gallery of videos/lightbox for showing selected v
 
 - Implement logic/elements for better UX, such as preloaders for video in lightbox, better error after failed video request.
 - As thumbnail src was not provided, I did random fetching of image. this should be changed.
+- Playbuzz embed sdk script should be cached in order to save requests.
 - Server should respond each request with different object. the current implementation is only for task purposes.
 - Only the most basic tests were implemented. need to go deeper with tests.
 
